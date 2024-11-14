@@ -1,0 +1,4 @@
+<!ENTITY aboutDialog.title "About XRE Example Application">
+
+<!ENTITY aboutDialog.appName "XRE Example Application">
+<!ENTITY aboutDialog.attribution "Made by aubymori, 2024">

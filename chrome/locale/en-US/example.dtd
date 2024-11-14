@@ -1,0 +1,26 @@
+<!ENTITY example.title "XRE Example Application">
+
+<!ENTITY example.show.label "Show">
+<!ENTITY example.show.accesskey "S">
+<!ENTITY example.full.label "Icons and Text">
+<!ENTITY example.full.accesskey "a">
+<!ENTITY example.icon.label "Icons">
+<!ENTITY example.icon.accesskey "I">
+<!ENTITY example.text.label "Text">
+<!ENTITY example.text.accesskey "T">
+
+<!ENTITY fileMenu.label "File">
+<!ENTITY fileMenu.accesskey "F">
+<!ENTITY viewMenu.label "View">
+<!ENTITY viewMenu.accesskey "V">
+<!ENTITY helpMenu.label "Help">
+<!ENTITY helpMenu.accesskey "H">
+
+<!ENTITY quitCmd.label "Exit">
+<!ENTITY quitCmd.accesskey "x">
+
+<!ENTITY aboutCmd.label "About">
+<!ENTITY aboutCmd.accesskey "A">
+
+<!ENTITY darkModeCmd.label "Dark Mode">
+<!ENTITY darkModeCmd.accesskey "D">

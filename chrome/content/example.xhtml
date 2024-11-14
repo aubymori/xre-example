@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE window SYSTEM "chrome://example/locale/example.dtd">
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://example/skin/" type="text/css"?>
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="exampleWindow"
+        icon="exampleWindow"
+        title="&example.title;"
+        width="640"
+        height="480"
+        style="color-scheme: light;">
+
+<script type="application/javascript" src="chrome://example/content/example.js"/>
+
+    <commandset id="mainCommandset">
+        <command id="cmd_Quit" oncommand="window.close()"/>
+        <command id="cmd_About"
+                 oncommand="window.openDialog('chrome://example/content/aboutDialog.xhtml', '', 'chrome,centerscreen,dependent')"/>
+        <command id="cmd_DarkMode" oncommand="ToggleDarkMode(0)"/>
+        <command id="cmd_ToolbarFull" oncommand="SetToolbarMode('full')"/>
+        <command id="cmd_ToolbarIcon" oncommand="SetToolbarMode('icons')"/>
+        <command id="cmd_ToolbarText" oncommand="SetToolbarMode('text')"/>
+    </commandset>
+    <keyset id="mainKeyset">
+        <key id="key_Quit" key="Q" command="cmd_Quit" modifiers="accel"/>
+        <key id="key_DarkMode" key="D" command="cmd_DarkMode" modifiers="accel"/>
+    </keyset>
+    <popupset id="mainPopupset">
+        <menupopup id="example-context-menu">
+            <menu id="context-show"
+                  label="&example.show.label;"
+                  accesskey="&example.show.accesskey;">
+                <menupopup>
+                    <menuitem id="context-full"
+                              label="&example.full.label;"
+                              accesskey="&example.full.accesskey;"
+                              type="radio"
+                              command="cmd_ToolbarFull"
+                              checked="true"/>
+                    <menuitem id="context-icon"
+                              label="&example.icon.label;"
+                              accesskey="&example.icon.accesskey;"
+                              type="radio"
+                              command="cmd_ToolbarIcon"/>
+                    <menuitem id="context-text"
+                              label="&example.text.label;"
+                              accesskey="&example.text.accesskey;"
+                              type="radio"
+                              command="cmd_ToolbarText"/>
+                </menupopup>
+            </menu>
+        </menupopup>
+    </popupset>
+    <toolbox id="example-toolbox">
+        <menubar id="main-menubar">
+            <menu id="file-menu" label="&fileMenu.label;" accesskey="&fileMenu.accesskey;">
+                <menupopup id="file-menupopup">
+                    <menuitem id="menu_quit"
+                              label="&quitCmd.label;"
+                              accesskey="&quitCmd.accesskey;"
+                              key="key_Quit"
+                              command="cmd_Quit"/>
+                </menupopup>
+            </menu>
+            <menu id="view-menu" label="&viewMenu.label;" accesskey="&viewMenu.accesskey;">
+                <menupopup id="view-menupopup">
+                    <menuitem id="menu_darkmode"
+                              label="&darkModeCmd.label;"
+                              accesskey="&darkModeCmd.accesskey;"
+                              key="key_DarkMode"
+                              command="cmd_DarkMode"
+                              type="checkbox"/>
+                </menupopup>
+            </menu>
+            <menu id="help-menu" label="&helpMenu.label;" accesskey="&helpMenu.accesskey;">
+                <menupopup id="help-menupopup">
+                    <menuitem id="menu_about"
+                              label="&aboutCmd.label;"
+                              accesskey="&aboutCmd.accesskey;"
+                              command="cmd_About"/>
+                </menupopup>
+            </menu>
+        </menubar>
+        <toolbar id="example-toolbar" mode="full" context="example-context-menu">
+            <toolbarbutton id="quit-button"
+                           label="&quitCmd.label;"
+                           accesskey="&quitCmd.accesskey;"
+                           command="cmd_Quit"/>
+            <toolbarbutton id="about-button"
+                           label="&aboutCmd.label;"
+                           accesskey="&aboutCmd.accesskey;"
+                           command="cmd_About"/>
+        </toolbar>
+    </toolbox>
+    <browser type="content" src="view-source:chrome://example/content/example.xhtml" flex="1"/>
+</window>

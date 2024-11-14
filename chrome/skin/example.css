@@ -1,0 +1,7 @@
+#quit-button {
+    list-style-image: url("chrome://example/skin/icons/quit.png");
+}
+
+#about-button {
+    list-style-image: url("chrome://example/skin/icons/info.png");
+}
